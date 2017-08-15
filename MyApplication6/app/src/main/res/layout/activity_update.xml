@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_update"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="Enter Phone No"
+        android:textColor="#372c24" />
+
+    <EditText
+        android:id="@+id/txt_update_search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip" />
+
+    <Button
+        android:id="@+id/btnsearch_DB"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dip"
+        android:text="Search Contact" />
+
+    <TextView
+        android:id="@+id/lbl_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dip"
+        android:text="Enter New Name"
+        android:textColor="#372c24" />
+
+    <EditText
+        android:id="@+id/txt_update_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dip" />
+
+    <TextView
+        android:id="@+id/lbl_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dip"
+        android:text="Enter New Phone No"
+        android:textColor="#372c24" />
+
+    <EditText
+        android:id="@+id/txt_update_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dip" />
+
+    <Button
+        android:id="@+id/btnUpdate_DB"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dip"
+        android:text="Update Contact in DB" />
+</RelativeLayout>
