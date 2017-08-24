@@ -5,24 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dip"
+        android:text="Enter ID"
+        android:textColor="#572c24" />
+    <EditText
+        android:id="@+id/txt_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip" />
+
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
+        android:layout_marginTop="39dip"
         android:text="Enter Name"
-        android:textColor="#372c24" />
+        android:textColor="#272c24" />
 
     <EditText
         android:id="@+id/txt_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip" />
+        android:layout_marginTop="28dip" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dip"
+        android:layout_marginTop="85dip"
         android:text="Enter Phone Number"
         android:textColor="#372c24" />
 

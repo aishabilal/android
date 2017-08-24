@@ -24,10 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="110dip"
         android:text="Delete Contact"/>
-    <Button android:id="@+id/btn_update"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dip"
-        android:text="Update Contact"/>
+"
+
 </RelativeLayout>
 

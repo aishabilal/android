@@ -8,19 +8,19 @@ public class Contact {
 
     private int _id;
     private String _name;
-    private String _phone_number;
-    public Contact(){
+    private int _phone_number;
+    public Contact(String name, int id, String ph){
     }
 
-    public Contact(int id, String name, String _phone_number){
+    public Contact(int name, int id, int _phone_number){
         this._id = id;
-        this._name = name;
+
         this._phone_number = _phone_number;
     }
 
-    public Contact(String name, String _phone_number){
+    public Contact(String name){
         this._name = name;
-        this._phone_number = _phone_number;
+
     }
 
     public int getID(){
@@ -39,11 +39,11 @@ public class Contact {
         this._name = name;
     }
 
-    public String getPhoneNumber(){
+    public int getPhoneNumber(){
         return this._phone_number;
     }
 
-    public void setPhoneNumber(String phone_number){
+    public void setPhoneNumber(int phone_number){
         this._phone_number = phone_number;
     }
 }

@@ -10,7 +10,13 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="51dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="197dp">
 
         <ListView
             android:id="@+id/listView1"

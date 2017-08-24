@@ -11,6 +11,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.id;
+import static android.R.attr.name;
+import static android.R.attr.phoneNumber;
+
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -47,6 +51,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+
+        values.put(KEY_ID,contact.getID());
         values.put(KEY_NAME, contact.getName());
         values.put(KEY_PH_NO, contact.getPhoneNumber());
 
@@ -61,8 +67,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
-        Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+        Contact contact = new Contact(cursor.getString(0),Integer.parseInt(cursor.getString(1)),
+                 cursor.getString(2));
 
         return contact;
     }
@@ -86,10 +92,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Contact contact = new Contact();
-                contact.setID(Integer.parseInt(cursor.getString(0)));
-                contact.setName(cursor.getString(1));
-                contact.setPhoneNumber(cursor.getString(2));
+                Contact contact = new Contact(name,id,phoneNumber);
+
+                contact.setName(cursor.getString(0));
+                contact.setID(Integer.parseInt(cursor.getString(1)));
+                contact.setPhoneNumber(cursor.getInt(2));
 
                 contactList.add(contact);
             } while (cursor.moveToNext());
@@ -98,20 +105,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contactList;
     }
 
-    public int updateContact_Phone(Contact contact,String phone) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_NAME, contact.getName());
-        values.put(KEY_PH_NO, contact.getPhoneNumber());
-        return db.update(TABLE_CONTACTS, values, KEY_PH_NO + " = ?",
-                new String[] { phone });
-    }
 
-    public void deleteContact(Contact contact) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_CONTACTS, KEY_PH_NO + " = ?",
-                new String[] { contact.getPhoneNumber() });
-        db.close();
+
+    public boolean deleteContact(int get_ID) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            String getStudyBriefIdInString = String.valueOf(get_ID);
+            int i = db.delete(TABLE_CONTACTS, " " + KEY_ID + " = ? ", new String[]{getStudyBriefIdInString});
+            db.close();
+            if (i == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public int getContactsCount() {
